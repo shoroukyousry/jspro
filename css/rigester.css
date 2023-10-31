@@ -1,0 +1,25 @@
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.contaner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 5px black  solid;
+    width: 50vw;
+    height:50vh ;
+}
+.but{
+    margin-bottom: 5px;
+}
+
+.error{
+    
+    color:red;
+}

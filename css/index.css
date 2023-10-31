@@ -1,0 +1,28 @@
+.body{
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: green;
+}
+
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    background-color: blueviolet;
+    font-size: 2rem;
+    padding:40px;
+    clear: both;
+}
+
+
+
+
+
+
+
+.top ul#out{
+    display: none;
+}
