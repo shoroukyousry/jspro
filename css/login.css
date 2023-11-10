@@ -15,3 +15,9 @@
     width: 50vw;
     height:50vh ;
 }
+.ff button{
+    background-color: #4AB6C2;
+    border-radius: 50%;
+    padding-bottom: 0;
+}
+

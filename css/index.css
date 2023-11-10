@@ -1,9 +1,10 @@
-.body{
+*{
     margin: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: green;
+    padding: 0;
+
+    
 }
+
 
 
 .top{
@@ -11,10 +12,25 @@
     justify-content: space-between;
     width: 100%;
     height: 100px;
-    background-color: blueviolet;
+    background-color:#D5E8E5;
     font-size: 2rem;
     padding:40px;
     clear: both;
+}
+
+
+#right{
+    padding-top: 20px;
+}
+
+.left{
+    padding-top: 20px;
+}
+
+
+
+#out li{
+list-style-type: none;
 }
 
 
@@ -23,6 +39,63 @@
 
 
 
-.top ul#out{
+#out{
     display: none;
+}
+
+
+
+.top button{
+    background-color: #4AB6C2;
+    border-radius: 50%;
+}
+
+
+
+.main{
+    display: flex;
+    
+}
+
+.products{
+    width: 50%;
+    background-color: rgb(0, 51, 128)
+}
+
+.pro-1{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color:#fff;
+}
+
+.img-pro-1 img{
+    border: 10px; 
+    border-radius: 50px;
+}
+
+.disc-pro-1{
+    width: 40%;
+    text-align: center;
+}
+
+.disc-pro-1 ul li{
+    list-style-type: none;
+}
+
+.left-mine{
+    background-color: #0e3e5a;
+}
+
+
+
+.icon li{
+   list-style-type: none;
+   padding: 5px;
+}
+
+
+img{
+    width: 200px;
+    height: 200px;
 }
