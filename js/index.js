@@ -1,4 +1,4 @@
-let myName = document.querySelector(".myname");
+let myName = document.querySelector(".myName");
 
 let auth = document.querySelector(".left");
 let out = document.querySelector("#out");
@@ -6,55 +6,53 @@ let products = document.querySelector(".products");
 let slide = document.querySelector("#slide");
 
 let user = JSON.parse(localStorage.getItem("user"));
-console.log(user);
 if (user) {
   auth.remove();
   out.style.display = "block";
   myName.innerHTML = user.userName;
 }
 
-//product slise
 
 let product = [
   {
     id: 1,
     name: "back page",
-    size: "smal",
+    size: "small",
     price: "40$",
-    imgeurl: "img/img2.jpg",
+    imageUrl: "img/img2.jpg",
   },
 
   {
     id: 2,
     name: "page",
-    size: "larg",
+    size: "large",
     price: "100$",
-    imgeurl: "img/img3.jpg",
+    imageUrl: "img/img3.jpg",
   },
 
   {
     id: 3,
-    name: "sheose",
+    name: "shoes",
     size: "32",
     price: "60$",
-    imgeurl: "img/img4.jpg",
+    imageUrl: "img/img4.jpg",
   },
 
   {
     id: 4,
-    name: "sheose plack",
+    name: "shoes plack",
     size: "40",
     price: "160$",
-    imgeurl: "img/img5.jpg",
+    imageUrl: "img/img5.jpg",
   },
 ];
 
-function drawproductsui() {
-  let productsui = product.map(function (item) {
+function drawProductsUi() {
+  let productsUi = product.map(function (item) {
     return `
     <div class="pro-1">
           <div class="img-pro-1">
-            <img src="${item.imgeurl}" />
+            <img src="${item.imageUrl}" />
           </div>
 
           <div class="disc-pro-1">
@@ -67,7 +65,7 @@ function drawproductsui() {
 
           <div class="icon">
             <ul>
-              <li><button onclick="addShoppingCar()">add to car</button></li>
+              <li><button onclick="${addedToCar(item.id)}">add to car</button></li>
               <li><i class="fa-solid fa-heart"></i></li>
             </ul>
           </div>
@@ -75,21 +73,19 @@ function drawproductsui() {
         </div>
     `;
   });
-  products.innerHTML = productsui;
+  products.innerHTML = productsUi;
 }
-drawproductsui();
+drawProductsUi();
 
 function addedToCar(id) {
-  let shosenItem = product.find((item) => item.id === id);
-  slide.innerHTML += `<p>${shosenItem.titel}</p>`;
+  let ChooseItem = product.find((item) => item.id === id);
+  slide.innerHTML += `<p>${ChooseItem.name}</p>`;
 }
 
 function addShoppingCar() {
-  let ss = JSON.parse(localStorage.getItem("userData"));
-  console.log(ss.userName);
-  if (ss.userName) {
-    Window.location = "shoppingcar.html";
+  if (user) {
+    location.href = "/shoppingCart.html";
   } else {
-    window.location = "login.html";
+    location.href = "/login.html";
   }
 }
