@@ -2,6 +2,7 @@ let myName = document.querySelector(".myName");
 
 let auth = document.querySelector(".left");
 let out = document.querySelector("#out");
+let logout_btn = document.querySelector("#logout_btn");
 let products = document.querySelector(".products");
 let slide = document.querySelector("#slide");
 let butaddtocar = document.querySelector("#butaddtocar");
@@ -12,6 +13,8 @@ if (user) {
   auth.remove();
   out.style.display = "block";
   myName.innerHTML = user.userName;
+} else {
+  out.style.display = "none"
 }
 
 let product = [
@@ -48,6 +51,20 @@ let product = [
   },
 ];
 
+logout_btn.addEventListener("click", function () {
+  localStorage.clear();
+  window.location.href = "rigester.html"
+})
+let shoppingCart = [];
+
+const addedToCar = (id) => {
+  let chooseItem = product.find((item) => item.id === id);
+  slide.innerHTML += `<p>${chooseItem.name}</p>`;
+  shoppingCart.push(chooseItem);
+  let productLength = shoppingCart.length;
+  number.innerHTML = `<p>${productLength}</p>`;
+}
+
 function drawProductsUi() {
   let productsUi = product.map(function (item) {
     return `
@@ -55,7 +72,6 @@ function drawProductsUi() {
           <div class="img-pro-1">
             <img src="${item.imageUrl}" />
           </div>
-
           <div class="disc-pro-1">
             <ul>
               <li>name:${item.name}<li>
@@ -66,9 +82,7 @@ function drawProductsUi() {
 
           <div class="icon">
             <ul>
-              <li><button onclick="${addedToCar(
-                item.id
-              )}">add to car</button></li>
+              <li><button  onclick="addedToCar(${item.id})">add to car</button></li>
               <li><i class="fa-solid fa-heart"></i></li>
             </ul>
           </div>
@@ -80,13 +94,8 @@ function drawProductsUi() {
 }
 drawProductsUi();
 
-function addedToCar(id) {
-  let ChooseItem = product.find((item) => item.id === id);
-  slide.innerHTML += `<p>${ChooseItem.name}</p>`;
-  number.innerHTML += `<p>${ChooseItem.lengs}</p>`;
-}
 
-butaddtocar.addEventListener(click, function addShoppingCar() {
+butaddtocar.addEventListener("click", function addShoppingCar() {
   if (user) {
     location.href = "shoppingcart.html";
   } else {

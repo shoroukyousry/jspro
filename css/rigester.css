@@ -1,33 +1,28 @@
-.parent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.contaner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
-.contaner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: 5px black  solid;
-    width: 50vw;
-    height:50vh ;
+  border: 5px black solid;
+  width: 50vw;
+  height: 50vh;
 }
-.but{
-    margin-bottom: 5px;
+.but {
+  margin-bottom: 5px;
 }
 
-.error{
-    
-    color:red;
+.error {
+  color: red;
 }
 
-
-.ff button{
-    background-color: #4AB6C2;
-    border-radius: 50%;
-    padding-bottom: 0;
+.ff button {
+  background-color: #4ab6c2;
+  border-radius: 50%;
+  padding-bottom: 0;
 }
-
