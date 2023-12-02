@@ -54,6 +54,19 @@ font-size:25px;
 
 
 
+
+.car{
+    display: grid;
+    gap: 0;
+    grid-template-columns:repeat(5,1fr);
+    grid-template-rows: 50px auto;
+    grid-template-areas: "car car car car number "
+                         " slide slide slide slide slide ";
+}
+
+
+
+
 #car {
     position: relative;
 }
@@ -63,12 +76,14 @@ font-size:25px;
 
 
 #number{
-    position: absolute;
-    bottom: -14pxpx;
-    right: -2.5px;
+   width: 30px;
+   height: 30px;
     background-color: red;
     color:#fff;
     border-radius: 50% 50% 50% 50%;
+    text-align: center;
+
+
 }
 
 #slide{
@@ -79,14 +94,19 @@ font-size:25px;
     height: 200px;
     width: 200px;
     border: 0px;
+    border-radius: 50px;
+    text-align: center;
+
+
 }
 
 
 
-/*#slide button{
-    position: static;
-    bottom: 0px;
-}*/
+#slide button{
+    position:absolute;
+    bottom:10px;
+    left:50px
+}
 
 
 

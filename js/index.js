@@ -4,6 +4,8 @@ let auth = document.querySelector(".left");
 let out = document.querySelector("#out");
 let products = document.querySelector(".products");
 let slide = document.querySelector("#slide");
+let butaddtocar = document.querySelector("#butaddtocar");
+let number = document.querySelector("#number");
 
 let user = JSON.parse(localStorage.getItem("user"));
 if (user) {
@@ -11,7 +13,6 @@ if (user) {
   out.style.display = "block";
   myName.innerHTML = user.userName;
 }
-
 
 let product = [
   {
@@ -65,7 +66,9 @@ function drawProductsUi() {
 
           <div class="icon">
             <ul>
-              <li><button onclick="${addedToCar(item.id)}">add to car</button></li>
+              <li><button onclick="${addedToCar(
+                item.id
+              )}">add to car</button></li>
               <li><i class="fa-solid fa-heart"></i></li>
             </ul>
           </div>
@@ -80,12 +83,13 @@ drawProductsUi();
 function addedToCar(id) {
   let ChooseItem = product.find((item) => item.id === id);
   slide.innerHTML += `<p>${ChooseItem.name}</p>`;
+  number.innerHTML += `<p>${ChooseItem.lengs}</p>`;
 }
 
-function addShoppingCar() {
+butaddtocar.addEventListener(click, function addShoppingCar() {
   if (user) {
-    location.href = "/shoppingCart.html";
+    location.href = "shoppingcart.html";
   } else {
-    location.href = "/login.html";
+    location.href = "login.html";
   }
-}
+});
